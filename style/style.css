@@ -1,0 +1,419 @@
+@import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&display=swap');
+/* font-family: 'Fuzzy Bubbles', cursive; */
+@import url('https://fonts.googleapis.com/css2?family=Dosis&display=swap');
+/* font-family: 'Dosis', sans-serif; */
+
+/* Iconos.... */
+@import url('https://weloveiconfonts.com/api/?family=fontawesome');
+
+/* fontawesome */
+[class*="fontawesome-"]:before {
+    font-family: 'FontAwesome', sans-serif;
+}
+
+/*.................General...................... */
+figcaption{
+    display: none;
+}
+
+html{
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255,255,255,1) 45%, rgb(184, 228, 245) 100%);
+}
+
+body, html{
+    min-width: 850px;
+}
+
+/* ........HEADER........... */
+header{
+    width: 250px;
+    position: fixed;
+    text-align: center;
+    background-color: #515ada;
+    border-radius: 20px;
+    border-right: 2px solid whitesmoke;
+    box-shadow: 3px 3px 15px grey;
+    margin-bottom: 100%;
+    margin-right: 100px;
+}
+
+#nota{
+    position: absolute;
+    top: 130px;
+    left: 177px;
+    width: 70px;
+}
+
+#logo{
+    width: 150px;
+    border-radius: 50%;
+    margin: 10px 5px;
+}
+
+ul{
+    padding: 0;
+    list-style: none;
+}
+
+ul li, ul a{
+    margin: 0 10px;
+	padding: 10px 20px;
+    font-size: 25px;
+    display: block;
+}
+
+/*...........EFECTO NAV............ */
+a{
+    position: relative;
+	outline: none;
+	color: #fff;
+	text-decoration: none;
+    transition: color ease 0.5s;
+}
+
+a::before {
+    box-sizing: border-box;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background: #fff;
+	content: '';
+	transition: top 0.3s;
+}
+
+a::after {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 2px;
+	height: 2px;
+	background: #fff;
+	content: '';
+	transition: height 0.3s;
+}
+
+a:hover{
+    color: rgb(245, 165, 145);
+}
+
+a:hover::before{
+	top: 100%;
+	opacity: 1;
+}
+
+a:hover::after{
+	height: 100%;
+} 
+
+
+/* ............Cartas con la Música.............. */
+div#container_videos, .tarjetasMusica, #sobre_Autora{
+    text-align: center;
+    position: relative;
+    left: 150px;
+    width: 80%;
+    margin: auto;
+}
+
+.tarjetasMusica{
+    padding-bottom: 400px;
+    padding-top: 25px;
+    background: url(../img/tocaDisco.png)  no-repeat 95% 85%;
+    background-attachment: fixed;
+}
+
+.tarjetasMusica h1, #videos{
+    margin: auto;
+    width: 200px;
+    color: #515ada;
+    border-left: 5px solid rgb(238, 124, 96);
+    font-size: 3em;
+    font-family: 'Fuzzy Bubbles', cursive;
+    /* font-family: 'Dosis', sans-serif; */
+}
+
+article, div.tarjeta_Video, div.myInfo{
+    position: relative;
+    color: white;
+    margin: 20px;
+    display: inline-block;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px grey;
+    background-color: rgba(87, 99, 121, 0.596);
+}
+
+article h3, .tarjeta_Video h3, #sonando{
+    font-family: 'Dosis', sans-serif;
+}
+
+.caratula{
+    border-radius: 10px;
+    width: 250px;
+    height: 200px;
+    object-fit:cover;
+    object-position: center;
+}
+
+#callen{
+    object-position: -12px;
+}
+
+article:hover i{
+    display: block; 
+    color: #efd5ff;
+}
+
+article img{
+    transition: opacity ease 0.5s;
+}
+
+article:hover img{
+    opacity: 0.2;
+}
+
+/*Nota musical si la canción está sonando */
+.musicOn{
+    font-size: 50px;
+    color: rgb(238, 68, 26);
+    position: absolute;
+    top: 0px;
+    right: -10px;
+    display: none;
+}
+
+@keyframes mueveNota{
+    from{
+        top: 0;
+    }
+    50%{
+        top: 20px;
+    }
+    to{
+        top: 0;
+    }
+}
+
+/* Icono del play de cada carátula..... */
+article i{
+    border: 1px solid black;
+    border-radius: 100%;
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 85px;
+    font-size: 100px;
+    transform: rotate(355deg);
+    transition: color ease 0.5s,
+                border ease 0.6s;
+}
+
+article i:hover{
+    cursor: pointer;
+    color: rgb(238, 124, 96);
+    border: 1px solid #efd5ff;
+}
+
+
+/* ...Titulo de la canción en los controles.... */
+h2#titulo, #sonando{
+    position: absolute;
+    left: 30px;
+}
+
+h2#titulo{
+    top: 38px;
+    font-size: 25px;
+    color: #101553;
+    padding: 15px;
+    border: 1px solid rgb(238, 68, 26);
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px rgb(245, 165, 145);
+}
+
+#sonando{
+    color: rgb(83, 83, 83);
+    font-size: 25px;
+    top: 30px;
+}
+
+/* ......Botones que ocultan el player o lo muestran........ */
+#oculta_Ctrles, #muestra_Ctrles{
+    color: #393f99;
+    padding: 10px;
+    font-size: 50px;
+    position: absolute;
+    top: -44px;
+    left: 35px;
+    border-radius: 100%;
+    background: rgb(167, 190, 243);
+    border: 1px solid rgb(238, 124, 96);
+}
+
+#oculta_Ctrles:hover, #muestra_Ctrles:hover{
+    cursor: pointer;
+
+}
+
+#muestra_Ctrles{
+    display: none;
+    animation: name duration timing-function delay iteration-count direction fill-mode;
+}
+
+@keyframes muestraPlayer {
+    from{
+        height: 2px;
+    }
+
+    to{
+        height: 100px;
+    }
+}
+
+@keyframes ocultaPlayer {
+    from{
+        height: 100px;
+    }
+
+    to{
+        height: 2px;
+    }
+}
+
+
+/*..........Controles de audio.......... */
+#controls{
+    min-width: 860px;
+    padding: 20px 0;
+    background: linear-gradient(to right, rgba(71, 119, 230, 0.363), #8d54e986);
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    bottom:0;
+    left: 0;
+    padding-bottom: 30px;
+    z-index: 9999;
+}
+
+div.time{
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.btns_audio{
+    font-size: 30px;
+}
+
+.btns_audio i{
+    color: #101553;
+    padding: 15px;
+    border-radius:100% ;
+    border-bottom: 3px solid rgb(238, 124, 96);
+    transition: all 0.5s ease;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 40%, white);
+}
+
+.btns_audio i:hover{
+    cursor: pointer;
+    color: rgb(238, 68, 26);
+    border-bottom: 3px solid #101553;
+}
+
+input[type="number"]{
+    width: 20px;
+}
+
+#pause, #vol_off{
+  display: none;
+}
+
+/* CONTROLES DE VOLUMEN */
+.btns_vol{
+    position: absolute;
+    right: 20px;
+    bottom: 30px;
+}
+
+#range-vol{
+    width: 100px;
+}
+
+#vol_off, #vol_up{
+    background: linear-gradient(to bottom, transparent, rgb(238, 85, 47), rgb(243, 157, 135));
+    border-bottom: 3px solid white;
+}
+
+#vol_off:hover, #vol_up:hover{
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 40%, white);
+    border-bottom: 3px solid rgb(238, 68, 26);
+}
+
+/*...Sección de Vídeos... */
+div#container_videos{
+    background: url(../img/previewDef.png)  no-repeat 95% 50%;
+    background-attachment: fixed;
+    padding-top: 30px;
+    padding-bottom: 400px;
+}
+
+h1#videos{
+    padding-left: 8px;
+    margin-bottom: 30px;
+}
+
+#container_videos h3{
+    font-size: 1.5em;
+}
+
+#container_videos video{
+    width: 500px;
+    height: 300px;
+    margin: 5px 20px;
+}
+
+div.tarjeta_Video{
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+/*.........Seccion sobre autora.......... */
+#sobre_Autora{
+    background: url(../img/blogger.png)  no-repeat 95% 85%;
+    padding-top: 30px;
+    position: relative;
+    bottom: 0;
+    width: 70%;
+}
+
+#sobre_Autora figure{
+    margin: 0;
+}
+
+div.myInfo{
+    width: 400px;
+}
+
+div.myInfo, #imgAutora, #imgPaisaje{
+    padding: 20px;
+    display: inline-block;
+}
+
+strong, b{
+    color: #101553;
+}
+
+#imgAutora img{
+    width: 300px;
+}
+
+#imgPaisaje img{
+    width: 600px;
+}
+
+#imgPaisaje img, #imgAutora img{
+    border-radius: 10px;
+}
+
+

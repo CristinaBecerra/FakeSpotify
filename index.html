@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/rangeStyle.css">
+    <link rel="icon" href="img/cafe.png">
+
+    <!-- LA LIBRERIA QUE HE USADO ES HOWLER.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js" crossorigin="anonymous"></script>
+    <title>Indie Air</title>
+    <script>
+        window.onload = function () {
+            console.clear();
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <figure>
+            <figcaption>Logo de Indie Air</figcaption>
+            <img id="logo" src="img/Logo.png" alt="Logo">
+        </figure>
+        <img id="nota" src="img/nota2.png" alt="Decoración Nota Musical">
+        <ul>
+            <li><a href="#tarjetasMus">Música</a></li>
+            <li><a href="#container_videos">Vídeos</a></li>
+            <li><a href="#sobre_Autora">Autora</a></li>
+        </ul>
+    </header>
+
+    <div id="tarjetasMus" class="tarjetasMusica">
+        <h1 id="musica">Música</h1>
+        <article>
+            <img class="caratula" src="img/ohWonder.jpg" alt="Caratula Disco ohWonder">
+            <h3>Oh Wonder - Drive</h3>
+            <i id="1" class="fontawesome-play" title="Drive"></i>
+            <span class="musicOn fontawesome-music"></span>
+        </article>
+
+        <article>
+            <img id="callen" class="caratula" src="img/CallenWhatCouldIDo.PNG" alt="Caratula Disco Callen">
+            <h3>Callen - What Could I do</h3>
+            <i id="2" class="fontawesome-play" title="What Could I Do"></i>
+            <span class="musicOn fontawesome-music"></span>
+        </article>
+
+        <article>
+            <img class="caratula" src="img/halseySorry.jpg" alt="Caratula Disco Halsey">
+            <h3>Halsey - Sorry</h3>
+            <i id="3" class="fontawesome-play" title="Sorry"></i>
+            <span class="musicOn fontawesome-music"></span>
+        </article>
+
+        <article>
+            <img class="caratula" src="img/cameronSanderson.jpg" alt="Caratula Disco Cameron Sanderson">
+            <h3>Cameron - Please, Listen Close</h3>
+            <i id="4" class="fontawesome-play" title="Please, Listen Close"></i>
+            <span class="musicOn fontawesome-music"></span>
+        </article>
+
+        <article>
+            <img class="caratula" src="img/hollowcoves.jpg" alt="Caratula Disco Hollow Coves">
+            <h3>Hollow Coves - The Woods</h3>
+            <i id="5" class="fontawesome-play" title="The Woods"></i>
+            <span class="musicOn fontawesome-music"></span>
+        </article>
+
+        <article>
+            <img class="caratula" src="img/theCollection.jpg" alt="Caratula Disco The Collection">
+            <h3>The Collection - Sing of the moon</h3>
+            <i id="6" class="fontawesome-play" title="Sing of the moon"></i>
+            <span class="musicOn fontawesome-music"></span>
+        </article>
+
+        <article>
+            <img class="caratula" src="img/VirginiatoVegasjpg.jpg" alt="Caratula Disco Virginia">
+            <h3>VTV - Better With You</h3>
+            <i id="7" class="fontawesome-play" title="Better With You"></i>
+            <span class="musicOn fontawesome-music"></span>
+        </article>
+
+        <article>
+            <img class="caratula" src="img/cafe.jpg" alt="Portada Cancion Personalizada">
+            <h3>Teaser - Indie Air(<b>Audacity</b>)</h3>
+            <i id="8" class="fontawesome-play" title="Teaser Indie Air"></i>
+            <span class="musicOn fontawesome-music"></span>
+        </article>
+
+    </div>
+    <div id="controls">
+        <span id="oculta_Ctrles" class="fontawesome-chevron-down"></span>
+        <span id="muestra_Ctrles" class="fontawesome-chevron-up"></span>
+        <div id="player_div">
+            <span id="sonando">Ahora sonando:</span>
+            <h2 id="titulo">Aún no hay canción</h2>
+
+            <div class="time">
+                <output id="rangeValue">0:00</output>
+                <input id="range" type="range" min="0" max="100" value="0" name="actualTime">
+                <output id="timeMax">0:00</output>
+            </div>
+
+            <div class="btns_audio">
+                <i id="can_anterior" class="fontawesome-fast-backward"></i>
+                <i id="atras_tiempo" class="fontawesome-backward"></i>
+                <i id="pause" class="fontawesome-pause"></i>
+                <i id="play" class="fontawesome-play"></i>
+                <i id="adel_tiempo" class="fontawesome-forward"></i>
+                <i id="can_siguiente" class="fontawesome-fast-forward"></i>
+
+                <div class="btns_vol">
+                    <i id="vol_off" class="fontawesome-volume-off"></i>
+                    <i id="vol_up" class="fontawesome-volume-up"></i>
+                    <input id="range_vol" type="range" min="0" max="1.0" step="0.1" value="0.3" name="actualTime"
+                        style="width: 150px;">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="container_videos">
+        <h1 id="videos">Videos</h1>
+
+        <div class="tarjeta_Video">
+            <h3>¿Conoces este instrumento?</h3>
+            <video controls poster="img/poster1a.PNG">
+                <source src="multimedia/video/dog.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+                <source src="multimedia/video/dog.webm"  type='video/webm; codecs="vp8, vorbis"'>
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <div class="tarjeta_Video">
+            <h3>Disfruta de un pequeño trocito de naturaleza</h3>
+            <video controls poster="img/poster4a.PNG">
+                <source src="multimedia/video/nature.mp4" type="video/mp4">
+                <source src="multimedia/video/nature.webm" type='video/webm; codecs="vp8, vorbis"'>
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <div class="tarjeta_Video">
+            <h3>El océano...</h3>
+            <video controls poster="img/poster2a.PNG">
+                <source src="multimedia/video/ocean.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+                <source src="multimedia/video/ocean.webm" type='video/webm; codecs="vp8, vorbis"'>
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <div class="tarjeta_Video">
+            <h3>¿Te gustaría aprender a tocar el piano?</h3>
+            <video controls poster="img/poster3a.PNG">
+                <source src="multimedia/video/piano.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+                <source src="multimedia/video/piano.webm"  type='video/webm; codecs="vp8, vorbis"'>
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <div class="tarjeta_Video">
+            <h3>Video Personalizado con Camtasia...</h3>
+            <video controls poster="img/autumn.jpg">
+                <source src="multimedia/video/VideoCamtasiaCristina.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <div id="sobre_Autora">
+        <h1 id="videos">Autora</h1>
+        <figure id="imgAutora">
+            <figcaption>Imagen primer plano de la autora de la web</figcaption>
+            <img src="img/autora.jpeg" alt="Imagen autora de la web">
+        </figure>
+        <div class="myInfo">
+            <h3><b>➡</b> Mi nombre es <strong>Cristina Becerra</strong> y soy estudiante de Desarrollo de Aplicaciones Web.</h3>
+            <h3> Ahora mismo me encuentro estudianto en I.E.S Martín Rivero en Ronda, ¡ya en segundo!</h3>
+            <h3><b>➡</b> Espero que hayas disfrutado la experiencia de pasear por esta web...</h3>
+            <h3><b>➡</b> Si tienes alguna sugerencia o duda puedes mandarme un correo a <strong>acrbecerra@gmail.com</strong></h3>
+            <h3> ¡Mis cosas favoritas son el Diseño Web, leer, la fotografía y las tortitas!</h3>
+        </div>
+        <figure id="imgPaisaje">
+            <figcaption>Foto de un paisaje de una cascada</figcaption>
+            <img src="img/miFoto.jpg" alt="Foto de una cascada">
+        </figure>
+    </div>
+    <script src="script/script.js"></script>
+    <script src="script/howler.js"></script>
+</body>
+
+</html>
